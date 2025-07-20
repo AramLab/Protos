@@ -99,7 +99,7 @@ func (x *RegisterRequest) GetLastName() string {
 
 type RegisterResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserID        int64                  `protobuf:"varint,1,opt,name=userID,proto3" json:"userID,omitempty"`
+	UserID        string                 `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -134,11 +134,11 @@ func (*RegisterResponse) Descriptor() ([]byte, []int) {
 	return file_auth_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *RegisterResponse) GetUserID() int64 {
+func (x *RegisterResponse) GetUserID() string {
 	if x != nil {
 		return x.UserID
 	}
-	return 0
+	return ""
 }
 
 type LoginRequest struct {
@@ -251,7 +251,7 @@ const file_auth_proto_rawDesc = "" +
 	"first_name\x18\x04 \x01(\tR\tfirstName\x12\x1b\n" +
 	"\tlast_name\x18\x05 \x01(\tR\blastName\"*\n" +
 	"\x10RegisterResponse\x12\x16\n" +
-	"\x06userID\x18\x01 \x01(\x03R\x06userID\"F\n" +
+	"\x06userID\x18\x01 \x01(\tR\x06userID\"F\n" +
 	"\fLoginRequest\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\"%\n" +
